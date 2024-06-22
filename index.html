@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title></title>
+</head>
+
+<body>
+ <style>
+ .container{
+  border:2px solid deeppink;
+  border-radius: 15px;
+  height:400px;
+background: hotpink;
+ }
+.box, .secbox{
+ border:2px solid deeppink;
+ background :deeppink ;
+ width:300px;
+ height:70px;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:30px;
+border-radius:10px;
+}
+#text1, #text2{
+ width: 220px;
+ height: 30px;
+ border-radius:10px;
+ border:2px solid deeppink;
+ color: deeppink;
+ font-weight: bold;
+ font-size: 15px ;
+}
+button{
+ padding:8px 25px;
+ border-radius:10px;
+ background :deeppink ;
+ color: black;
+ font-weight: bold;
+ font-size: 15px ;
+ border:2px solid deeppink;
+}
+#result, h4{
+color: black;
+ font-weight: bold;
+ font-size: 15px ;
+}
+.rescon{
+ height:40px;
+ width:200px;
+}
+ </style>
+ <div class="container">
+  <center><i><h2>LOVE CALCULATOR♥️</h2></i></center>
+<center><div class="box">
+ <h4>YOUR NAME</h4><br> <br>
+ <input type="text" id="text1"></div></center>
+ 
+<center> <div class="secbox">
+
+<input type="text" id="text2">
+ <h4>PARTNER NAME</h4></div></center>
+<center><button type="submit" onclick="but()" >CALCULATE</button></center> <br>
+<center><div class="rescon"><div id="result">
+</div><center/>
+<div id="res"></div>
+<div id="solu"></div>
+ </div>
+<script>
+let name1=""
+let name2="", namee1="",namee2=""
+let arr2=""
+let arr1="", p=[], v=[],c=[], s=[]
+let w=0,x=0,y=0,z=0,i=0,j=0,k=0,d=0, result=0, final=""
+function but()
+{
+   name1=document.getElementById("text1").value
+   name2=document.getElementById("text2").value
+ namee1= name1.toUpperCase().trim()
+  namee2= name2.toUpperCase().trim()
+   arr1=namee1.split("");
+  arr2=namee2.split("");
+/* this first pair of loop is for comparing two names then same letters are picked and store in another array */
+ for( i=0;i<arr1.length;i++)
+ {
+   for( j=0;j<arr2.length;j++)
+   {
+     if(arr1[i]==arr2[j]){
+    c=arr2.splice(j,1);
+    console.log(c)
+    s.push(c)
+     }
+/*  let fil= arr1.filter(value=> c==arr1)*/
+}
+   }/*this pair of loop is for the new array will be checked with first name if the letter is same kick that letter from the first name and remaining letter are be calculated */
+  for(k=0;k<s.length;k++)
+ {
+   for( d=0;d<arr1.length;d++)
+   {
+    if(s[k]==arr1[d]){
+    arr1.splice(d,1)
+    console.log(arr1)
+    console.log(arr1.length)
+  
+    break
+   }
+   
+ }
+}
+
+console.log(second())
+}
+function second(){
+  name1=document.getElementById("text1").value;
+   name2=document.getElementById("text2").value;
+   namee1= name1.toUpperCase().trim()
+  namee2= name2.toUpperCase().trim()
+   arr1=namee1.split("");
+ arr2=namee2.split("");
+
+ for(x=0;x<arr2.length;x++)
+ {
+   for( y=0;y<arr1.length;y++)
+   {
+     if(arr2[x]==arr1[y]){
+    p=arr1.splice(y,1);
+    console.log(p)
+    v.push(p)
+     }
+/*  let fil= arr1.filter(value=> c==arr1)*/
+    }
+  /* let res=document.getElementById("res");
+ res.innerHTML=v;*/
+ }
+  for( w=0;w<v.length;w++)
+ {
+   for( z=0;z<arr2.length;z++)
+   {
+    if(v[w]==arr2[z]){
+    arr2.splice(z,1)
+    console.log(arr2)
+    console.log(arr2.length)
+    break
+   }
+   
+ }
+}
+
+ console.log(solution ())
+}
+function solution(){
+
+o=arr1.length+arr2.length
+console.log(o)
+let fl=['F','l','A','M','E','S']
+for(p=0;p<6;p++){
+ if(o<7)
+console.log( fl.delete(o-1))
+}
+
+if(o==3||o==5||o==14)
+ final="Relationship Between You and your partner is FRIENDS♥️"
+ else if(o==10||o==15)
+ final="Relationship Between You and your partner is LOVERS💕"
+ else if(o==8||o==12||o==13)
+ final="Relationship Between You and your partner is AFFECTION😍"
+ else if(o==6||o==11)
+ final="Relationship Between You and your partner is MARRIAGE👑"
+ else if(o==2||o==4||o==7||o==9)
+ final="Relationship Between You and your partner is ENIMES🙂"
+ else
+ final="Relationship Between You and your partner is SIBILING🫂"
+ let result = document.getElementById("result");
+ result.innerHTML = final;
+ console.log(final)
+ 
+}
+
+ </script>
+</body>
+
+</html>
